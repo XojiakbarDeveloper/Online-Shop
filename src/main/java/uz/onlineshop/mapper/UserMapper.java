@@ -1,9 +1,5 @@
 package uz.onlineshop.mapper;
 
-
-
-
-
 import uz.onlineshop.dtoes.req.LoginResponse;
 import uz.onlineshop.entity.User;
 

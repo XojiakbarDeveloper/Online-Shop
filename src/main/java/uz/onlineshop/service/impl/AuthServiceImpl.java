@@ -45,7 +45,7 @@ public class AuthServiceImpl implements AuthService {
             throw RestException.restThrow(ErrorTypeEnum.INVALID_EMAIL);
         }
 
-        Role roles = Role.USER;
+        Role roles = Role.CUSTOMER;
 
         Optional<User> optionalUser = userRepository.findByEmail(request.getEmail());
         User user;
