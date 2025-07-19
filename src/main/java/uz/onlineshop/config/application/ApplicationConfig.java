@@ -32,8 +32,6 @@ public class ApplicationConfig {
             return new UserPrincipal(user);
         };
     }
-
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

@@ -11,13 +11,13 @@ import org.springframework.context.annotation.Configuration;
 
 @OpenAPIDefinition(
         info = @Info(
-                title = "learning_management_system.uz",
-                description = "learning management system REST API"
+                title = "Online shop",
+                description = "Online shop REST API"
         ),
         servers = {
                 @Server(
                         description = "Server ENV",
-                        url = "https://api-lms.tenzorsoft.uz"
+                        url = "https://api-online-shop"
                 ),
                 @Server(
                         description = "Local ENV",

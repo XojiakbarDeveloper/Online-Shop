@@ -21,10 +21,6 @@ import uz.onlineshop.enums.Role;
 
 public class User extends TimeLong {
 
-    private String firstName;
-
-    private String lastName;
-
     private String password;
 
     private String phoneNumber;
