@@ -1,29 +1,21 @@
-package uz.onlineshop.entity;
+package uz.onlineshop.dtoes.req;
 
-import jakarta.persistence.*;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import uz.onlineshop.entity.base.TimeLong;
+import uz.onlineshop.entity.Category;
 @Data
-@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product extends TimeLong {
-
+public class  ProductRequest {
     private String productName;
     private String description;
     private Double price;
     private Integer stockQuantity;
-    private Integer soldQuantity; // nechta sotilgani
     private String color;
-    private Boolean isAvailable;
     private String imageUrl;
-    @ManyToOne
-    private Category category;
-
-
-
+    private Long categoryId;
 }

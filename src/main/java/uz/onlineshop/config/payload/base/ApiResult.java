@@ -93,6 +93,9 @@ public class ApiResult<T> implements Serializable {
         return new ApiResult<>(null, false, message);
     }
 
+    public static <T> ApiResult<T> notFound (String errorMessage) {
+        return new ApiResult<>(null, false, errorMessage);
+    }
 
 
 }
