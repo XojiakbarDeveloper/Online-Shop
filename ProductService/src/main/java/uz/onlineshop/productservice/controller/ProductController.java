@@ -24,19 +24,19 @@ public class ProductController {
         return productService.create(request);
     }
 
-    @PutMapping("/update-product/{id}")
-    public ApiResult<ProductResponse> update(@PathVariable Long id, @RequestBody ProductRequest request) {
+    @PutMapping("/update-product")
+    public ApiResult<ProductResponse> update(@RequestParam("id") Long id, @RequestBody ProductRequest request) {
         return productService.update(id, request);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete-product/{id}")
-    public ApiResult<?> delete(@PathVariable Long id) {
+    @DeleteMapping("/delete-product")
+    public ApiResult<?> delete(@RequestParam("id") Long id) {
         return productService.delete(id);
     }
 
-    @GetMapping("/get-product/{id}")
-    public ApiResult<ProductResponse> get(@PathVariable Long id) {
+    @GetMapping("/get-product")
+    public ApiResult<ProductResponse> get(@RequestParam Long id) {
         return productService.get(id);
     }
 

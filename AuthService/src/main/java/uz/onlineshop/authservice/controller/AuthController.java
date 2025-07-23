@@ -2,15 +2,16 @@ package uz.onlineshop.authservice.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import uz.onlineshop.authservice.config.payload.base.ApiResult;
 import uz.onlineshop.authservice.config.payload.base.ResBaseMsg;
 import uz.onlineshop.authservice.req.*;
+import uz.onlineshop.authservice.res.AuthResponse;
 import uz.onlineshop.authservice.res.LoginResponse;
 import uz.onlineshop.authservice.service.AuthService;
+//import uz.onlineshop.authservice.service.VerificationService;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,6 +19,8 @@ import uz.onlineshop.authservice.service.AuthService;
 public class AuthController {
 
     private final AuthService authService;
+//    private final VerificationService verificationService;
+
 
     @PostMapping("/sign-up")
     public ApiResult<ResBaseMsg> signUp(@RequestBody @Valid SignUpRequest request) {
@@ -48,6 +51,30 @@ public class AuthController {
     public ApiResult<ResBaseMsg> checkForgotPassword(@RequestBody @Valid ForgotPasswordRequest request) {
         return ApiResult.successResponse(authService.checkForgotPassword(request));
     }
+
+//    @PostMapping("/send-code")
+//    public ResponseEntity<?> sendVerificationCode(@RequestBody PhoneRequest request) {
+//        verificationService.sendVerificationCode(request.getPhoneNumber());
+//        return ResponseEntity.ok("Verification code sent");
+//    }
+//
+//    @PostMapping("/verify-code")
+//    public ResponseEntity<?> verifyCode(@RequestBody VerifyCodeRequest request) {
+//        if (verificationService.verifyCode(request.getPhoneNumber(), request.getCode())) {
+//            return ResponseEntity.ok("Code verified successfully");
+//        }
+//        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid verification code");
+//    }
+//
+//    @PostMapping("/register-by-phone")
+//    public ResponseEntity<AuthResponse> registerByPhone(@RequestBody PhoneRegisterRequest request) {
+//        return ResponseEntity.ok(authService.registerByPhone(request));
+//    }
+//
+//    @PostMapping("/login-by-phone")
+//    public ResponseEntity<AuthResponse> loginByPhone(@RequestBody PhoneLoginRequest request) {
+//        return ResponseEntity.ok(authService.loginByPhone(request));
+//    }
 
 
 }
