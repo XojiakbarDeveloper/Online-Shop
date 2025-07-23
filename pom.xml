@@ -16,6 +16,7 @@
         <module>ProductService</module>
         <module>CommonModel</module>
         <module>OrderService</module>
+        <module>GateWay</module>
         <!-- boshqa modullarni ham shu yerga qo‘shasan -->
     </modules>
 

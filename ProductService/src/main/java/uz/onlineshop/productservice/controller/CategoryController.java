@@ -23,38 +23,38 @@ public class CategoryController {
     private final CategoryService categoryService;
 
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ApiResult<CategoryResponse>> get(@PathVariable Long id) {
+    @GetMapping("/get-category")
+    public ResponseEntity<ApiResult<CategoryResponse>> get(@RequestParam("id") Long id) {
         return ResponseEntity.ok(categoryService.get(id));
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping
+    @PostMapping("/create-category")
     public ResponseEntity<ApiResult<CategoryResponse>> create(@RequestBody CategoryRequest request) {
         return ResponseEntity.ok(categoryService.create(request));
     }
 
 
-    @GetMapping
+    @GetMapping("/getAll")
     public ResponseEntity<ApiResult<Page<CategoryResponse>>> getAll(Pageable pageable) {
         return ResponseEntity.ok(categoryService.getAll(pageable));
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/{id}")
-    public ResponseEntity<ApiResult<CategoryResponse>> update(@PathVariable Long id,
+    @PutMapping("/update-category")
+    public ResponseEntity<ApiResult<CategoryResponse>> update(@RequestParam("id") Long id,
                                                                @RequestBody CategoryRequest request) {
         return ResponseEntity.ok(categoryService.update(id, request));
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResult<Void>> delete(@PathVariable Long id) {
+    @DeleteMapping("/delete-category")
+    public ResponseEntity<ApiResult<Void>> delete(@RequestParam("id") Long id) {
         return ResponseEntity.ok(categoryService.delete(id));
     }
 
-    @GetMapping("/by-category/{categoryId}")
-    public ResponseEntity<List<ProductResponse>> getProductsByCategory(@PathVariable Long categoryId) {
+    @GetMapping("/by-category-product}")
+    public ResponseEntity<List<ProductResponse>> getProductsByCategory(@RequestParam("id") Long categoryId) {
         List<ProductResponse> products = categoryService.getProductsByCategory(categoryId);
         return ResponseEntity.ok(products);
     }

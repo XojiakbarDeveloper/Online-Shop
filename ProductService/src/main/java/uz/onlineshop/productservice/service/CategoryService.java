@@ -3,6 +3,7 @@ package uz.onlineshop.productservice.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 import uz.onlineshop.authservice.config.payload.base.ApiResult;
 import uz.onlineshop.productservice.dtoes.req.CategoryRequest;
 import uz.onlineshop.productservice.dtoes.res.CategoryResponse;
@@ -11,7 +12,7 @@ import uz.onlineshop.productservice.dtoes.res.ProductResponse;
 
 import java.util.List;
 
-
+@Service
 public interface CategoryService {
     ApiResult<CategoryResponse> get(Long id);
     ApiResult<CategoryResponse> create(CategoryRequest request);

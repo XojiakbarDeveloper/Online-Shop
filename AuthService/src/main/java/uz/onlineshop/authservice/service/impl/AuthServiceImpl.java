@@ -20,14 +20,13 @@ import uz.onlineshop.authservice.entity.User;
 
 import uz.onlineshop.authservice.mapper.UserMapper;
 import uz.onlineshop.authservice.repository.UserRepository;
-import uz.onlineshop.authservice.req.ForgotPasswordRequest;
-import uz.onlineshop.authservice.req.VerifyRequest;
-import uz.onlineshop.authservice.req.SendCodeRequest;
-import uz.onlineshop.authservice.req.SignInRequest;
-import uz.onlineshop.authservice.req.SignUpRequest;
+import uz.onlineshop.authservice.req.*;
+import uz.onlineshop.authservice.res.AuthResponse;
 import uz.onlineshop.authservice.res.LoginResponse;
 import uz.onlineshop.authservice.service.AuthService;
 import uz.onlineshop.authservice.service.CodeService;
+//import uz.onlineshop.authservice.service.SmsService;
+//import uz.onlineshop.authservice.service.VerificationService;
 import uz.onlineshop.commonmodel.enums.ErrorTypeEnum;
 import uz.onlineshop.commonmodel.enums.Role;
 
@@ -45,6 +44,8 @@ public class AuthServiceImpl implements AuthService {
     private final CodeService codeService;
     private final AuthenticationManager authenticationManager;
     private final JwtTokenProvider jwtTokenProvider;
+//    private final VerificationService  verificationService;
+//    private final SmsService smsService;
 
     @Override
     public ResBaseMsg signUp(SignUpRequest request) {
@@ -194,33 +195,52 @@ public class AuthServiceImpl implements AuthService {
                 .orElseThrow(() -> new ChangeSetPersister.NotFoundException());
     }
 
-
-//    public LoginResponse googleSign(String uid) {
-//        try {
-//            UserRecord userRecord = FirebaseAuth.getInstance().getUser(uid);
-//            Optional<User> optionalUser = userRepository.findByEmail(userRecord.getEmail());
-//
-//            User user;
-//            if (optionalUser.isPresent()) {
-//                user = optionalUser.get();
-//            } else {
-//                user = User.builder()
-//                        .email(userRecord.getEmail())
-//                        .active(Boolean.TRUE)
-//                        .role(Role.USER)
-//                        .build();
-//                userRepository.save(user);
-//            }
-//
-//            log.info("User sign in with Google Auth: {}", userRecord.getEmail());
-//
-//            String token = jwtTokenProvider.generateToken(user);
-//            return UserMapper.toLoginResponse(user, token);
-//        } catch (FirebaseAuthException e) {
-//            e.printStackTrace();
-//            throw RestException.restThrow(ErrorTypeEnum.GOOGLE_AUTH_ERROR);
+//    public AuthResponse registerByPhone(PhoneRegisterRequest request) {
+//        // 1. Kodni tekshirish
+//        if (!verificationService.verifyCode(request.getPhoneNumber(), request.getCode())) {
+//            throw new RuntimeException("Invalid verification code");
 //        }
+//
+//        // 2. User mavjudligini tekshirish
+//        if (userRepository.existsByPhoneNumber(request.getPhoneNumber())) {
+//            throw new RuntimeException("Phone number already exists");
+//        }
+//
+//        // 3. Yangi user yaratish
+//        User user = new User();
+//        user.setPhoneNumber(request.getPhoneNumber());
+//        user.setPassword(request.getPassword());
+//        user.setPhoneVerified(true);
+//        user.setRole(Role.CUSTOMER);
+//
+//        User savedUser = userRepository.save(user);
+//
+//        // 4. Token generatsiya qilish
+//        String token = jwtTokenProvider.generateToken(savedUser);
+//
+//        return AuthResponse.builder()
+//                .token(token)
+//                .build();
 //    }
+//
+//    public AuthResponse loginByPhone(PhoneLoginRequest request) {
+//        // 1. Kodni tekshirish
+//        if (!verificationService.verifyCode(request.getPhoneNumber(), request.getCode())) {
+//            throw new RuntimeException("Invalid verification code");
+//        }
+//
+//        // 2. User ni topish
+//        User user = (User) userRepository.findByPhoneNumber(request.getPhoneNumber())
+//                .orElseThrow(() -> new RuntimeException("User not found"));
+//
+//        // 3. Token generatsiya qilish
+//        String token = jwtTokenProvider.generateToken(user);
+//
+//        return AuthResponse.builder()
+//                .token(token)
+//                .build();
+//    }
+
 
 }
 

@@ -1,9 +1,6 @@
 package uz.onlineshop.authservice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,11 +20,15 @@ public class User extends TimeLong {
 
     private String password;
 
-    private String phoneNumber;
-
     private String email;
 
     private Boolean active;
+
+    @Column(unique = true, nullable = false)
+    private String phoneNumber;
+
+    @Column(nullable = false)
+    private boolean phoneVerified = false;
 
     @Enumerated(EnumType.STRING)
     private Role role;
