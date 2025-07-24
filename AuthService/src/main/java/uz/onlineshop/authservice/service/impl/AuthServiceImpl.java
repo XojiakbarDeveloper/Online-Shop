@@ -194,7 +194,7 @@ public class AuthServiceImpl implements AuthService {
         return userRepository.findByEmail(email)
                 .orElseThrow(() -> new ChangeSetPersister.NotFoundException());
     }
-
+//
 //    public AuthResponse registerByPhone(PhoneRegisterRequest request) {
 //        // 1. Kodni tekshirish
 //        if (!verificationService.verifyCode(request.getPhoneNumber(), request.getCode())) {

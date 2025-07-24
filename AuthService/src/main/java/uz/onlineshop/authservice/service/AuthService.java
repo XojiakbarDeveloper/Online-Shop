@@ -22,7 +22,7 @@ public interface AuthService {
     ResBaseMsg checkForgotPassword(ForgotPasswordRequest request);
 
     ResBaseMsg resendCode(SendCodeRequest request);
-
+//
 //    AuthResponse registerByPhone(PhoneRegisterRequest request);
 //
 //    AuthResponse loginByPhone(PhoneLoginRequest request);
