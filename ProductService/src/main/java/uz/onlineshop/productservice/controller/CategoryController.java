@@ -53,7 +53,7 @@ public class CategoryController {
         return ResponseEntity.ok(categoryService.delete(id));
     }
 
-    @GetMapping("/by-category-product}")
+    @GetMapping("/by-category-product")
     public ResponseEntity<List<ProductResponse>> getProductsByCategory(@RequestParam("id") Long categoryId) {
         List<ProductResponse> products = categoryService.getProductsByCategory(categoryId);
         return ResponseEntity.ok(products);
