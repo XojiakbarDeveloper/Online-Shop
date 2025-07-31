@@ -1,7 +1,6 @@
 package uz.onlineshop.authservice.config;
 
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +17,7 @@ import uz.onlineshop.authservice.config.handler.MyAccessDeniedHandler;
 import uz.onlineshop.authservice.config.jwt.JwtAuthenticationFilter;
 
 
-@Configuration
+@Configuration("authSecurityConfig") // AuthService dagi
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true, prePostEnabled =true)
 public class SecurityConfig {
@@ -47,7 +46,7 @@ public class SecurityConfig {
             "/swagger-resources/**",
             "/webjars/**"
     };
-    @Bean
+    @Bean("authSecurityFilterChain")
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)

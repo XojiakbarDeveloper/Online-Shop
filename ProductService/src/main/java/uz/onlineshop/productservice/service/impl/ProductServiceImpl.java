@@ -1,17 +1,17 @@
 package uz.onlineshop.productservice.service.impl;
 
+import entity.productEntity.Category;
+import entity.productEntity.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import repository.productRepository.CategoryRepository;
+import repository.productRepository.ProductRepository;
 import uz.onlineshop.authservice.config.payload.base.ApiResult;
 import uz.onlineshop.productservice.dtoes.req.ProductRequest;
 import uz.onlineshop.productservice.dtoes.res.ProductResponse;
-import uz.onlineshop.productservice.entity.Category;
-import uz.onlineshop.productservice.entity.Product;
 import uz.onlineshop.productservice.mapper.ProductMapper;
-import uz.onlineshop.productservice.repository.CategoryRepository;
-import uz.onlineshop.productservice.repository.ProductRepository;
 import uz.onlineshop.productservice.service.ProductService;
 
 

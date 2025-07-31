@@ -1,12 +1,12 @@
-package uz.onlineshop.authservice.entity;
+package entity.authEntity;
 
+import entity.base.TimeLong;
+import enums.authEnums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import uz.onlineshop.authservice.entity.base.TimeLong;
-import uz.onlineshop.commonmodel.enums.Role;
 
 
 @Data

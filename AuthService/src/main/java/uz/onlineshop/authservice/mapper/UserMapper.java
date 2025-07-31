@@ -1,7 +1,7 @@
 package uz.onlineshop.authservice.mapper;
 
 
-import uz.onlineshop.authservice.entity.User;
+import entity.authEntity.User;
 import uz.onlineshop.authservice.res.LoginResponse;
 
 import java.util.Collections;

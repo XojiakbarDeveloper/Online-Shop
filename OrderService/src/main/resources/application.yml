@@ -22,6 +22,9 @@ application:
   security:
     jwt:
       secret-key: 0E0864C3B7F5E51220DAE4C25DF9A3AC3F7BD65ABE229C2BA5DF7908776EB56C
+      expiration: 86400000
+      refresh-token:
+        expiration: 604800000
 
 springdoc:
   swagger-ui:

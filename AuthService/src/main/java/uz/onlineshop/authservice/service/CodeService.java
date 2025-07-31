@@ -1,13 +1,13 @@
 package uz.onlineshop.authservice.service;
 
 
+import entity.authEntity.Code;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Service;
 import uz.onlineshop.authservice.config.application.exceptions.RestException;
-import uz.onlineshop.authservice.entity.Code;
+import uz.onlineshop.authservice.enums.ErrorTypeEnum;
 import uz.onlineshop.authservice.repository.CodeRepository;
-import uz.onlineshop.commonmodel.enums.ErrorTypeEnum;
 
 
 import java.time.LocalDateTime;

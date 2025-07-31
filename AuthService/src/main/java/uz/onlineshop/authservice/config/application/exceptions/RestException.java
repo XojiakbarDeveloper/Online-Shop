@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.http.HttpStatus;
-import uz.onlineshop.commonmodel.enums.ErrorTypeEnum;
+import uz.onlineshop.authservice.enums.ErrorTypeEnum;
 
 
 import java.util.function.Supplier;

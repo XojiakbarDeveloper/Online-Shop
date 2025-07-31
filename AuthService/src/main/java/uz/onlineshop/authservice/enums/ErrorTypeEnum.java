@@ -1,4 +1,4 @@
-package uz.onlineshop.commonmodel.enums;
+package uz.onlineshop.authservice.enums;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package uz.onlineshop.productservice.entity.base;
+package entity.base;
 
 import jakarta.persistence.*;
 import lombok.Getter;

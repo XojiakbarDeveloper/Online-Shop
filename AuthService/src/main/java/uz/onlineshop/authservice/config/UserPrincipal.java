@@ -1,10 +1,10 @@
 package uz.onlineshop.authservice.config;
 
 
+import entity.authEntity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import uz.onlineshop.authservice.entity.User;
 
 
 import java.util.Collection;

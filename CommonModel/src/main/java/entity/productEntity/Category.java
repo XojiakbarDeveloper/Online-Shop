@@ -1,5 +1,6 @@
-package uz.onlineshop.productservice.entity;
+package entity.productEntity;
 
+import entity.base.TimeLong;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -7,8 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import uz.onlineshop.productservice.entity.base.TimeLong;
-
 
 import java.util.List;
 

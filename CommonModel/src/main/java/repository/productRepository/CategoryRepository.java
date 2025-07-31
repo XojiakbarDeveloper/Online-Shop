@@ -1,8 +1,8 @@
-package uz.onlineshop.productservice.repository;
+package repository.productRepository;
 
+import entity.productEntity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import uz.onlineshop.productservice.entity.Category;
 
 
 @Repository

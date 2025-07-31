@@ -104,6 +104,13 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- auth-service, order-service va boshqa modullarda -->
+        <dependency>
+            <groupId>uz.fixly</groupId>
+            <artifactId>common-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -1,9 +1,9 @@
 package uz.onlineshop.authservice.repository;
 
 
+import entity.authEntity.Code;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import uz.onlineshop.authservice.entity.Code;
 
 
 import java.util.Optional;

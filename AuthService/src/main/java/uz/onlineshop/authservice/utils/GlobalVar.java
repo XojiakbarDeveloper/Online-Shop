@@ -3,8 +3,8 @@ package uz.onlineshop.authservice.utils;
 
 
 
+import entity.authEntity.User;
 import uz.onlineshop.authservice.config.UserPrincipal;
-import uz.onlineshop.authservice.entity.User;
 
 import java.time.LocalDateTime;
 

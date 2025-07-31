@@ -1,9 +1,8 @@
-package uz.onlineshop.productservice.repository;
+package repository.productRepository;
 
+import entity.productEntity.Category;
+import entity.productEntity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
-import uz.onlineshop.productservice.entity.Category;
-import uz.onlineshop.productservice.entity.Product;
-
 
 import java.util.List;
 

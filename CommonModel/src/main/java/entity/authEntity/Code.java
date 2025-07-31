@@ -1,4 +1,4 @@
-package uz.onlineshop.authservice.entity;
+package entity.authEntity;
 
 import jakarta.persistence.*;
 import lombok.*;

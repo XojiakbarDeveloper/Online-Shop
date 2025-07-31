@@ -1,9 +1,9 @@
 package uz.onlineshop.productservice.mapper;
 
 
+import entity.productEntity.Category;
 import uz.onlineshop.productservice.dtoes.req.CategoryRequest;
 import uz.onlineshop.productservice.dtoes.res.CategoryResponse;
-import uz.onlineshop.productservice.entity.Category;
 
 public interface CategoryMapper {
 

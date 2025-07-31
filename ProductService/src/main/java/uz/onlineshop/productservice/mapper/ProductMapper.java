@@ -1,9 +1,9 @@
 package uz.onlineshop.productservice.mapper;
 
 
+import entity.productEntity.Product;
 import uz.onlineshop.productservice.dtoes.req.ProductRequest;
 import uz.onlineshop.productservice.dtoes.res.ProductResponse;
-import uz.onlineshop.productservice.entity.Product;
 
 public interface ProductMapper {
 

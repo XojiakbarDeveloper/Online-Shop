@@ -1,11 +1,11 @@
-package uz.onlineshop.authservice.repository;
+package repository.authRepository;
 
+
+import entity.authEntity.User;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import uz.onlineshop.authservice.entity.User;
-
 
 import java.util.Optional;
 

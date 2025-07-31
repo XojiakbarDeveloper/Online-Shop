@@ -1,10 +1,10 @@
 package uz.onlineshop.authservice.res;
 
+import entity.authEntity.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import uz.onlineshop.authservice.entity.User;
 
 @Data
 @Builder

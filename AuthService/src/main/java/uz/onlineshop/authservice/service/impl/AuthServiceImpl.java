@@ -1,6 +1,8 @@
 package uz.onlineshop.authservice.service.impl;
+import entity.authEntity.User;
 
 
+import uz.onlineshop.authservice.enums.ErrorTypeEnum;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -12,23 +14,20 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import repository.authRepository.UserRepository;
 import uz.onlineshop.authservice.config.UserPrincipal;
 import uz.onlineshop.authservice.config.application.exceptions.RestException;
 import uz.onlineshop.authservice.config.jwt.JwtTokenProvider;
 import uz.onlineshop.authservice.config.payload.base.ResBaseMsg;
-import uz.onlineshop.authservice.entity.User;
 
 import uz.onlineshop.authservice.mapper.UserMapper;
-import uz.onlineshop.authservice.repository.UserRepository;
 import uz.onlineshop.authservice.req.*;
-import uz.onlineshop.authservice.res.AuthResponse;
 import uz.onlineshop.authservice.res.LoginResponse;
 import uz.onlineshop.authservice.service.AuthService;
 import uz.onlineshop.authservice.service.CodeService;
 //import uz.onlineshop.authservice.service.SmsService;
 //import uz.onlineshop.authservice.service.VerificationService;
-import uz.onlineshop.commonmodel.enums.ErrorTypeEnum;
-import uz.onlineshop.commonmodel.enums.Role;
+import enums.authEnums.Role;
 
 
 import java.util.Optional;
@@ -44,8 +43,7 @@ public class AuthServiceImpl implements AuthService {
     private final CodeService codeService;
     private final AuthenticationManager authenticationManager;
     private final JwtTokenProvider jwtTokenProvider;
-//    private final VerificationService  verificationService;
-//    private final SmsService smsService;
+
 
     @Override
     public ResBaseMsg signUp(SignUpRequest request) {

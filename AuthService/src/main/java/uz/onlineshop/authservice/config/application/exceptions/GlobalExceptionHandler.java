@@ -29,7 +29,7 @@ import org.springframework.web.multipart.support.MissingServletRequestPartExcept
 import org.springframework.web.servlet.NoHandlerFoundException;
 import uz.onlineshop.authservice.config.payload.base.ApiResult;
 import uz.onlineshop.authservice.config.payload.base.ErrorResponse;
-import uz.onlineshop.commonmodel.enums.ErrorTypeEnum;
+import uz.onlineshop.authservice.enums.ErrorTypeEnum;
 
 
 import static org.springframework.http.HttpStatus.*;

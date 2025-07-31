@@ -1,7 +1,7 @@
 package uz.onlineshop.authservice.res;
 
 import lombok.*;
-import uz.onlineshop.commonmodel.enums.Role;
+import enums.authEnums.Role;
 
 
 import java.util.Set;

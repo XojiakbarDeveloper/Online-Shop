@@ -1,6 +1,7 @@
 package uz.onlineshop.authservice.config.application;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import entity.authEntity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,9 +17,8 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import repository.authRepository.UserRepository;
 import uz.onlineshop.authservice.config.UserPrincipal;
-import uz.onlineshop.authservice.entity.User;
-import uz.onlineshop.authservice.repository.UserRepository;
 
 import java.util.List;
 
@@ -26,6 +26,8 @@ import java.util.List;
 @Configuration
 @RequiredArgsConstructor
 public class ApplicationConfig {
+
+
     private final UserRepository repository;
 
     @Bean
@@ -43,7 +45,7 @@ public class ApplicationConfig {
     }
 
 
-    @Bean
+    @Bean("authAuthenticationManager")
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }

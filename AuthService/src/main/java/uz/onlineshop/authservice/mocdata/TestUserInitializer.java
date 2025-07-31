@@ -1,15 +1,15 @@
 package uz.onlineshop.authservice.mocdata;
 
+import entity.authEntity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import uz.onlineshop.authservice.entity.User;
 
-import uz.onlineshop.authservice.repository.UserRepository;
-import uz.onlineshop.commonmodel.enums.Role;
+import enums.authEnums.Role;
+import repository.authRepository.UserRepository;
 
 
 @Configuration

@@ -97,7 +97,6 @@
         </dependency>
 
 
-
         <!-- Email -->
         <dependency>
             <groupId>com.sun.mail</groupId>
@@ -128,5 +127,14 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>uz.fixly</groupId>
+            <artifactId>product-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+
     </dependencies>
 </project>

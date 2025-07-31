@@ -7,10 +7,10 @@
 //import uz.onlineshop.productservice.dtoes.req.CommentRequest;
 //import uz.onlineshop.productservice.dtoes.res.CommentResponse;
 //import uz.onlineshop.productservice.entity.Comment;
-//import uz.onlineshop.productservice.entity.Product;
+//import uz.onlineshop.productservice.entity.productEntity.Product;
 //import uz.onlineshop.productservice.mapper.CommentMapper;
 //import uz.onlineshop.productservice.repository.CommentRepository;
-//import uz.onlineshop.productservice.repository.ProductRepository;
+//import uz.onlineshop.productservice.repository.productRepository.ProductRepository;
 //import uz.onlineshop.productservice.service.CommentService;
 //
 //

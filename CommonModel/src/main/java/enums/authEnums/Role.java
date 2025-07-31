@@ -1,4 +1,4 @@
-package uz.onlineshop.commonmodel.enums;
+package enums.authEnums;
 
 public enum Role {
 

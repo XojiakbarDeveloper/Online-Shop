@@ -1,11 +1,14 @@
-package uz.onlineshop.productservice.entity;
+package entity.productEntity;
 
-import jakarta.persistence.*;
+import entity.base.TimeLong;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import uz.onlineshop.productservice.entity.base.TimeLong;
+
+import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -16,9 +19,9 @@ public class Product extends TimeLong {
 
     private String productName;
     private String description;
-    private Double price;
+    private BigDecimal price;
     private Integer stockQuantity;
-    private Integer soldQuantity; // nechta sotilgani
+    private Integer soldQuantity;
     private String color;
     private Boolean isAvailable;
     private String imageUrl;

@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfigurationSource;
 
 
-@Configuration
+@Configuration("productSecurityConfig") // ProductService dagi
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true)
 public class SecurityConfig {
@@ -24,7 +24,7 @@ public class SecurityConfig {
     private final JwtAuthFilter jwtAuthFilter;
 
     public SecurityConfig(
-            @Qualifier("corsConfigurationSource0") CorsConfigurationSource corsConfigurationSource, JwtAuthFilter jwtAuthFilter) {
+            @Qualifier("corsConfigurationSource") CorsConfigurationSource corsConfigurationSource, JwtAuthFilter jwtAuthFilter) {
         this.corsConfigurationSource = corsConfigurationSource;
         this.jwtAuthFilter = jwtAuthFilter;
     }
@@ -38,7 +38,7 @@ public class SecurityConfig {
             "/webjars/**"
     };
 
-    @Bean
+    @Bean("orderSecurityFilterChain")
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
@@ -55,7 +55,7 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Bean
+    @Bean("orderAuthenticationManager")
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }

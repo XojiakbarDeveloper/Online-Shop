@@ -1,6 +1,7 @@
 package uz.onlineshop.authservice.config.jwt;
 
 
+import entity.authEntity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -10,7 +11,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import uz.onlineshop.authservice.entity.User;
 
 import java.security.Key;
 import java.util.Date;
