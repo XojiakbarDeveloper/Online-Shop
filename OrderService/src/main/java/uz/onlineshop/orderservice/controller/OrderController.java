@@ -19,33 +19,29 @@ public class OrderController {
 
     private final OrderService orderService;
 
-    // ✅ 1. Yangi buyurtma berish
     @PostMapping
     public ResponseEntity<OrderResponseDto> createOrder(@RequestBody OrderRequestDto request) {
         OrderResponseDto response = orderService.createOrder(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    // ✅ 2. Foydalanuvchining buyurtmalari
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<OrderResponseDto>> getUserOrders(@PathVariable Long userId) {
         return ResponseEntity.ok(orderService.getOrdersByUser(userId));
     }
 
-    // ✅ 3. Bitta buyurtma haqida
     @GetMapping("/{orderId}")
     public ResponseEntity<OrderResponseDto> getOrderById(@PathVariable Long orderId) {
         return ResponseEntity.ok(orderService.getOrderById(orderId));
     }
 
-    // ✅ 4. Admin uchun barcha buyurtmalar
     @GetMapping
     public ResponseEntity<List<OrderResponseDto>> getAllOrders(
-            @RequestParam(required = false) OrderStatus status) {
+            @RequestParam(name = "status", required = false) OrderStatus status) {
         return ResponseEntity.ok(orderService.getAllOrders(status));
     }
 
-    // ✅ 5. Buyurtma statusini o‘zgartirish (Admin)
+
     @PutMapping("/{orderId}/status")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<OrderResponseDto> updateStatus(
@@ -54,7 +50,6 @@ public class OrderController {
         return ResponseEntity.ok(orderService.updateOrderStatus(orderId, status));
     }
 
-    // ✅ 6. Buyurtmani o‘chirish (faqat kerak bo‘lsa)
     @DeleteMapping("/{orderId}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteOrder(@PathVariable Long orderId) {
