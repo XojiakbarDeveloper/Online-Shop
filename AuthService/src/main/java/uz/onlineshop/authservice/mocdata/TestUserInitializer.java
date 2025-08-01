@@ -29,9 +29,9 @@ public class TestUserInitializer {
                 user.setPassword(passwordEncoder.encode("test123"));
                 user.setRole(Role.ADMIN);
                 userRepository.save(user);
-                log.info("✅ Тестовый пользователь создан: test / test123@ / +1234567890");
+                log.info("✅ Тестовый пользователь создан: test / test123 / +1234567890");
             } else {
-                log.info("⚠️ Тестовый пользователь уже существует:  test / test123@ / +1234567890");
+                log.info("⚠️ Тестовый пользователь уже существует:  test / test123 / +1234567890");
             }
         };
     }
