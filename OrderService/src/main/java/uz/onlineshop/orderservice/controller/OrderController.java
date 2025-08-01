@@ -20,6 +20,7 @@ public class OrderController {
     private final OrderService orderService;
 
     // ✅ 1. Yangi buyurtma berish
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<OrderResponseDto> createOrder(@RequestBody OrderRequestDto request) {
         OrderResponseDto response = orderService.createOrder(request);

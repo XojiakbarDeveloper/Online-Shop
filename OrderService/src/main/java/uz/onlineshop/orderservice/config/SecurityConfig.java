@@ -17,7 +17,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 
 @Configuration("productSecurityConfig") // ProductService dagi
 @EnableWebSecurity
-@EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true)
+@EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true )
 public class SecurityConfig {
 
     private final CorsConfigurationSource corsConfigurationSource;
