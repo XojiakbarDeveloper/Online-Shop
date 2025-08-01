@@ -27,8 +27,8 @@ public class User extends TimeLong {
     @Column(unique = true, nullable = false)
     private String phoneNumber;
 
-    @Column(nullable = false)
-    private boolean phoneVerified = false;
+//    @Column(nullable = false)
+//    private boolean phoneVerified = false;
 
     @Enumerated(EnumType.STRING)
     private Role role;
