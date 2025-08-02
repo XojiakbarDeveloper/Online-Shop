@@ -17,7 +17,7 @@ public class RestException extends RuntimeException {
     private final ErrorTypeEnum errorTypeEnum;
 
 
-    private RestException(@NotNull ErrorTypeEnum errorTypeEnum) {
+    public RestException(@NotNull ErrorTypeEnum errorTypeEnum) {
         this.errorTypeEnum = errorTypeEnum;
         this.status = errorTypeEnum.getStatus();
     }

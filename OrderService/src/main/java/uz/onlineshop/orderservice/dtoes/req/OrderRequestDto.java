@@ -1,5 +1,6 @@
 package uz.onlineshop.orderservice.dtoes.req;
 
+import entity.basketEntity.Basket;
 import enums.orderEnums.PaymentMethod;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +14,7 @@ import java.util.List;
 @Builder
 public class OrderRequestDto {
     private Long userId;
-    private List<OrderItemRequest> items;
+    private Long basketId;
     private String shippingAddress;
     private String phoneNumber;
     private String note;

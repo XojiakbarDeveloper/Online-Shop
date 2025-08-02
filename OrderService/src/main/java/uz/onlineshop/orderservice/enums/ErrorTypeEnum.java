@@ -23,7 +23,8 @@ public enum ErrorTypeEnum {
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "Foydalanuvchi topilmadi!"),
     CODE_NOT_MATCH("Kod xato!"),
     ALREADY_ACTIVE("Bu akaunt allaqachon faol!"),
-    GOOGLE_AUTH_ERROR("Bunday google akaunt topilmadi!");
+    GOOGLE_AUTH_ERROR("Bunday google akaunt topilmadi!"),
+    BASKET_NOT_FOUND( "Basket topilmadi berilgan id bo'yicha" );
 
 
     private final String message;
