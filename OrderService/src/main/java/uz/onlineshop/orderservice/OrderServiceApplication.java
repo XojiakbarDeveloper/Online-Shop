@@ -10,17 +10,20 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages = {
         "uz.onlineshop.orderservice",
         "repository.authRepository",
+        "repository.basketRepository",
         "entity.authEntity"
 })
 @EnableJpaRepositories(basePackages = {
         "repository.authRepository",
         "repository.orderRepository",
-        "repository.productRepository"
+        "repository.productRepository",
+        "repository.basketRepository"
 })
 @EntityScan(basePackages = {
         "entity.authEntity",
         "entity.orderEntity",
         "entity.productEntity",
+        "entity.basketEntity"
 })
 public class OrderServiceApplication {
     public static void main(String[] args) {

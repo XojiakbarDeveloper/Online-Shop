@@ -5,12 +5,13 @@ import org.springframework.stereotype.Service;
 import uz.onlineshop.orderservice.dtoes.req.OrderRequestDto;
 import uz.onlineshop.orderservice.dtoes.res.OrderResponseDto;
 
+import javax.security.sasl.AuthenticationException;
 import java.util.List;
 
 @Service
 public interface OrderService {
 
-    OrderResponseDto createOrder(OrderRequestDto request);
+    OrderResponseDto createOrder(OrderRequestDto request) throws AuthenticationException;
 
     List<OrderResponseDto> getOrdersByUser(Long userId);
 
