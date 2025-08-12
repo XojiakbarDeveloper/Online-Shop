@@ -4,6 +4,7 @@ import enums.orderEnums.OrderStatus;
 import org.springframework.stereotype.Service;
 import uz.onlineshop.orderservice.dtoes.req.OrderRequestDto;
 import uz.onlineshop.orderservice.dtoes.res.OrderResponseDto;
+import uz.onlineshop.orderservice.dtoes.res.ResponseMessage;
 
 import javax.security.sasl.AuthenticationException;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 @Service
 public interface OrderService {
 
-    OrderResponseDto createOrder(OrderRequestDto request) throws AuthenticationException;
+    ResponseMessage createOrder(OrderRequestDto request) throws AuthenticationException;
 
     List<OrderResponseDto> getOrdersByUser(Long userId);
 

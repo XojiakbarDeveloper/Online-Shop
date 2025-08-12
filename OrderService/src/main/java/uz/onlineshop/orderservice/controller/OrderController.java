@@ -10,6 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import uz.onlineshop.orderservice.dtoes.req.OrderRequestDto;
 import uz.onlineshop.orderservice.dtoes.res.OrderResponseDto;
+import uz.onlineshop.orderservice.dtoes.res.ResponseMessage;
 import uz.onlineshop.orderservice.service.OrderService;
 
 import javax.security.sasl.AuthenticationException;
@@ -25,10 +26,10 @@ public class OrderController {
     @Operation(summary = "Yangi buyurtma yaratish",
             description = "Foydalanuvchi savatchasidagi mahsulotlar asosida yangi buyurtma yaratish")
     @PostMapping
-    public ResponseEntity<OrderResponseDto> createOrder(
+    public ResponseEntity<ResponseMessage> createOrder(
             @Parameter(description = "Buyurtma yaratish so'rovi", required = true)
             @RequestBody OrderRequestDto request) throws AuthenticationException {
-        OrderResponseDto response = orderService.createOrder(request);
+        ResponseMessage response = orderService.createOrder(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
