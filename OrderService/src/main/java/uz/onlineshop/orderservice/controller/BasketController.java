@@ -1,6 +1,5 @@
 package uz.onlineshop.orderservice.controller;
 
-import enums.basketEnums.BasketStatus;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +34,7 @@ public class BasketController {
             description = "Berilgan foydalanuvchi IDsi bo'yicha savatchani olish")
     @GetMapping("/customer-basket")
     public ResponseEntity<BasketResponse> getUserBasket(
-            @Parameter(description = "Foydalanuvchi IDsi", required = true, example = "123")
+            @Parameter(description = "Foydalanuvchi IDsi", required = true, example = "2")
             @RequestParam(name = "userId") String userId) {
         return ResponseEntity.ok(basketService.getUserBasket(userId));
     }
@@ -71,6 +70,7 @@ public class BasketController {
             description = "Savatchadagi mavjud mahsulot miqdorini o'zgartirish")
     @PutMapping("/update-product-quantity")
     public ResponseEntity<ResponseMessage> updateBasketItem(
+
             @Parameter(description = "Mahsulot miqdori yangilash so'rovi")
             @RequestBody UpdateItemDTO updateItemDTO) {
         return ResponseEntity.ok(basketService.updateBasketProductQuantity(updateItemDTO));
