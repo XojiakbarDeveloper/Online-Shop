@@ -58,5 +58,23 @@ public class Order extends TimeLong {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> items = new ArrayList<>();
 
+    @PrePersist
+    public void generateOrderNumber() {
+        this.orderNumber = "ORD-" + generateUniqueCode();
+    }
+
+    private String generateUniqueCode() {
+
+        String datePart = new java.text.SimpleDateFormat("yyMMdd").format(new java.util.Date());
+
+        int randomPart = (int) (Math.random() * 9000) + 1000;
+
+        int uniqueSuffix = (int) (System.currentTimeMillis() % 1000);
+
+        int finalPart = (randomPart + uniqueSuffix) % 10000;
+
+        return datePart + "-" + String.format("%04d", finalPart);
+    }
+
 
 }
