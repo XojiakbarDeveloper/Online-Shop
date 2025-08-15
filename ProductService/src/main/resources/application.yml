@@ -1,11 +1,13 @@
 spring:
   application:
     name: ProductService
+
   datasource:
     url: jdbc:postgresql://localhost:5432/online_shop
     username: postgres
     password: root123
     driver-class-name: org.postgresql.Driver
+
   jpa:
     database: postgresql
     hibernate:
@@ -14,6 +16,12 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: LaaMax
+    password: 9090
 
 server:
   port: 8082
