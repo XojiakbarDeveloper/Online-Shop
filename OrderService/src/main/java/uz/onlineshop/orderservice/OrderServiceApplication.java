@@ -18,7 +18,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         "repository.authRepository",
         "repository.orderRepository",
         "repository.productRepository",
-        "repository.basketRepository"
+        "repository.basketRepository",
+        "uz.onlineshop.orderservice.rebbitMQ"
 })
 @EntityScan(basePackages = {
         "entity.authEntity",
