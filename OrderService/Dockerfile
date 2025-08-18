@@ -1,8 +1,13 @@
-# 1. Java image tanlaymiz
-FROM openjdk:17-jdk-slim
+# Build stage
+FROM maven:3.8.4-openjdk-17-slim AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean install -DskipTests
 
-# 2. Ilovani container ichiga nusxalash
-COPY target/order-service-0.0.1-SNAPSHOT.jar app.jar
-
-# 3. Spring Boot ilovani ishga tushirish
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+# Run stage
+FROM openjdk:17-slim
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+EXPOSE 8082
+ENTRYPOINT ["java", "-jar", "app.jar"]
