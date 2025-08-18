@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: OnlineShop
+  datasource:
+    url: jdbc:postgresql://dpg-d2hehrv5r7bs7380hvbg-a.oregon-postgres.render.com:5432/onlinemarket_9gd0
+    username: onlinemarket_9gd0_user
+    password: n4GETncwAlC2A7F5iba9XqoqyXn9TLGc
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      mode: never
+  logging:
+    level:
+      org.hibernate: ERROR
+      org.hibernate.SQL: ERROR
+      org.hibernate.type.descriptor.sql.BasicBinder: ERROR
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: xturgunov069@gmail.com
+    password: achj gaca mtvp vewt
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: 8080
+
+application:
+  security:
+    jwt:
+      secret-key: 0E0864C3B7F5E51220DAE4C25DF9A3AC3F7BD65ABE229C2BA5DF7908776EB56C
+      expiration: 86400000
+      refresh-token:
+        expiration: 604800000
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
