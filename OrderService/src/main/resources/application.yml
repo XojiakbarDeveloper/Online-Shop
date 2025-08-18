@@ -2,9 +2,9 @@ spring:
   application:
     name: OrderService
   datasource:
-    url: jdbc:postgresql://localhost:5432/online_shop
-    username: postgres
-    password: root123
+    url: jdbc:postgresql://dpg-d2gs55v5r7bs73fdoq30-a/online_shop_cttn
+    username: online_shop_cttn_user
+    password: vFXZrSJPvoXfp1OrsPrpKCLn2ZInBdnG
     driver-class-name: org.postgresql.Driver
   jpa:
     database: postgresql
