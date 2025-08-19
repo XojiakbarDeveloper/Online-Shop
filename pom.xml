@@ -17,6 +17,7 @@
         <module>CommonModel</module>
         <module>OrderService</module>
         <module>GateWay</module>
+        <module>ChatService</module>
         <!-- boshqa modullarni ham shu yerga qo‘shasan -->
     </modules>
 
