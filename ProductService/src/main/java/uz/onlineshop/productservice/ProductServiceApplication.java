@@ -9,16 +9,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EntityScan(basePackages = {
         "entity.authEntity",
-        "entity.productEntity"
+        "entity.productEntity",
+        "uz.onlineshop.productservice.entity"   // <<-- qo‘shish kerak
 })
 @EnableJpaRepositories(basePackages = {
         "repository.authRepository",
-        "repository.productRepository"
-})
-@ComponentScan(basePackages = {
-        "uz.onlineshop.productservice",
-        "uz.onlineshop.productservice.service",
-        "uz.onlineshop.productservice.controller"
+        "repository.productRepository",
+        "uz.onlineshop.productservice.repository" // <<-- qo‘shish kerak
 })
 public class ProductServiceApplication {
 
@@ -26,3 +23,4 @@ public class ProductServiceApplication {
         SpringApplication.run(ProductServiceApplication.class, args);
     }
 }
+
